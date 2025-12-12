@@ -5,7 +5,128 @@
   <title>Ziming Wang | Mechanical Engineering Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portfolio of Ziming Wang, Mechanical Engineering graduate specializing in CAD, GD&T, and mechanical design." />
+  
   <style>
+
+        .section-arrow1 {
+      margin: 40px auto 20px;
+      font-size: 26px;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid #1f2937;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.2s ease;
+      animation: arrow-bounce 1.6s infinite;
+      position: relative;
+      top: -230px;
+    }
+
+    .section-arrow2 {
+      margin: 40px auto 20px;
+      font-size: 26px;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid #1f2937;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.2s ease;
+      animation: arrow-bounce 1.6s infinite;
+      position: relative;
+      top: -20px;
+    }
+
+    .section-arrow3 {
+      margin: 40px auto 20px;
+      font-size: 26px;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid #1f2937;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.2s ease;
+      animation: arrow-bounce 1.6s infinite;
+      position: relative;
+      top: -230px;
+    }
+
+    .section-arrow1:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .section-arrow2:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .section-arrow3:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    @keyframes arrow-bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(6px); }
+      60% { transform: translateY(3px); }
+    }
+
+
+    /* --------------------------------------
+       Center all section headers & subtitles
+    -------------------------------------- */
+    .section-header {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2.5rem;
+      max-width: 760px;
+    }
+
+    .section-header .section-kicker,
+    .section-header .section-title,
+    .section-header .section-subtitle,
+    .section-header p {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-detail-title,
+    .project-detail-subtitle {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Tighten space between "Project breakdown" and first detail card */
+        #projects {
+      margin-top: -40px;   /* move entire section upward */
+    }
+
+    #project-details {
+      padding-bottom: 0px;
+    }
+
+    .project-detail {
+      padding: 4px 0 40px;
+    }
+
     :root {
       --bg: #020617;
       --bg-card: #030712;
@@ -147,12 +268,32 @@
 
     /* HERO */
 
+        #hero {
+      transform: translateY(-80px);   /* adjust ↑ / ↓ as needed */
+    }
+
+        #hero {
+      min-height: 100vh;         /* full screen height */
+      display: flex;             
+      justify-content: center;   /* center vertically */
+      align-items: center;       /* center horizontally */
+      position: relative;        /* enables arrow positioning */
+      padding: 0;                /* remove previous padding */
+    }
+
+    #hero .hero {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
     .hero {
       padding: calc(var(--section-padding) + 12px) 0 var(--section-padding);
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
-      gap: 48px;
-      align-items: center;
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;   /* centers the intro block */
     }
 
     .hero-kicker {
@@ -184,6 +325,9 @@
       font-size: 15px;
       color: var(--text-main);
       max-width: 580px;
+      text-align: left;        /* left-align this paragraph */
+      margin-left: auto;       /* keep the block itself centered */
+      margin-right: auto;
     }
 
     .hero-tagline strong {
@@ -192,9 +336,26 @@
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
+      justify-content: center;   /* centers buttons horizontally */
       gap: 12px;
       margin-top: 20px;
+    }
+
+    /* Center the hero container within the shell */
+    #hero .shell {
+      display: flex;
+      justify-content: center;   /* centers the whole hero block */
+    }
+
+    /* Center all content inside the hero block */
+    .hero {
+      max-width: 720px;          /* keeps lines readable */
+      width: 100%;
+      text-align: center;        /* centers heading & subtitle */
+      display: flex;
+      flex-direction: column;
+      align-items: center;       /* centers child elements */
+      padding: calc(var(--section-padding) + 12px) 0 var(--section-padding);
     }
 
     .btn {
@@ -244,99 +405,6 @@
       opacity: 0.9;
     }
 
-    .hero-meta {
-      margin-top: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .hero-meta-pill {
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid #1f2937;
-      background: #020617;
-    }
-
-    .hero-right {
-      position: relative;
-    }
-
-    .hero-card {
-      border-radius: 10px;
-      background: var(--bg-card);
-      padding: 16px 16px 14px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .hero-card-header {
-      font-size: 13px;
-      margin-bottom: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .hero-card-header span.label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-    }
-
-    .hero-card-title {
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .hero-card-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 6px;
-      margin-top: 4px;
-    }
-
-    .hero-pill {
-      border-radius: 8px;
-      background: #020617;
-      border: 1px solid #111827;
-      padding: 6px 8px;
-      font-size: 12px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .hero-pill span.key {
-      color: var(--text-muted);
-    }
-
-    .hero-pill span.val {
-      color: var(--text-main);
-      font-weight: 500;
-    }
-
-    .hero-badge {
-      margin-top: 10px;
-      font-size: 11px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: #020617;
-      border: 1px solid #1f2937;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .hero-badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #22c55e;
-    }
-
     /* Sections */
 
     section {
@@ -367,7 +435,7 @@
       max-width: 640px;
     }
 
-    /* Projects overview (cards that link to details) */
+    /* Projects overview */
 
     .projects-grid {
       display: grid;
@@ -460,8 +528,24 @@
       align-items: center;
     }
 
-    /* PROJECT DETAILS – like your friend's layout:
-       Title + 3 images (optional) + 3 columns: Objective / Process / Results */
+    .project-card-image {
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      background: #020617;
+      border: 1px solid #1f2937;
+    }
+
+    .project-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* PROJECT DETAILS */
 
     .details-intro {
       padding-bottom: 10px;
@@ -485,17 +569,6 @@
       margin-bottom: 16px;
     }
 
-    .project-detail-title {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .project-detail-subtitle {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
     .detail-images {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -506,25 +579,23 @@
 
     .detail-image-slot {
       border-radius: 12px;
-      /* remove border & background */
       border: none;
       background: transparent;
-
-      /* same box size for all images */
-      height: 210px;        /* tweak this number if you want them taller/shorter */
-      overflow: hidden;     /* crop anything that sticks out */
+      height: 210px;
+      overflow: hidden;
     }
 
     .detail-image-slot img {
       width: 100%;
       height: 100%;
-      object-fit: cover;    /* fills the box, same size, slight crop if needed */
+      object-fit: cover;
       display: block;
     }
+
     .detail-image-slot video {
       width: 100%;
       height: 100%;
-      object-fit: cover;      /* same framing as the images */
+      object-fit: cover;
       border-radius: 12px;
       display: block;
     }
@@ -628,26 +699,122 @@
       max-width: 520px;
     }
 
-    .contact-row {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 13px;
-      align-items: center;
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.3fr);
+      gap: 24px;
+      margin-top: 24px;
     }
 
-    .contact-pill {
-      border-radius: 999px;
-      background: #020617;
-      border: 1px solid #1f2937;
-      padding: 7px 12px;
-      display: inline-flex;
+    .contact-card {
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      padding: 18px 18px 20px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-card-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .contact-info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+
+    .contact-info-icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-info-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--text-muted);
+    }
+
+    .contact-info-text {
       color: var(--text-main);
+    }
+
+    .contact-info-text-title {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .contact-info-text a {
+      color: var(--accent);
+    }
+
+    .contact-note {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
       font-size: 12px;
     }
+
+    .contact-field label {
+      color: var(--text-muted);
+    }
+
+    .contact-field input,
+    .contact-field textarea {
+      background: #020617;
+      border-radius: 8px;
+      border: 1px solid #1f2937;
+      padding: 8px 10px;
+      color: var(--text-main);
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .contact-field input::placeholder,
+    .contact-field textarea::placeholder {
+      color: #6b7280;
+    }
+
+    .contact-field input:focus,
+    .contact-field textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.5);
+    }
+
+    .contact-submit {
+      width: 100%;
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+        #contact {
+      background: #0d1117;
+    }
+
 
     footer {
       padding: 26px 0 22px;
@@ -674,13 +841,6 @@
     /* Responsive */
 
     @media (max-width: 960px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-        padding-top: calc(var(--section-padding) + 6px);
-      }
-      .hero-right {
-        order: -1;
-      }
       .projects-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -689,6 +849,9 @@
       }
       .detail-images {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .contact-layout {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
 
@@ -725,9 +888,9 @@
             </div>
           </div>
           <div class="nav-links">
+            <a href="#about">Background</a>
             <a href="#projects">Projects</a>
             <a href="#project-details">Details</a>
-            <a href="#about">Background</a>
             <a href="#contact">Contact</a>
           </div>
         </nav>
@@ -737,359 +900,25 @@
     <main>
       <!-- HERO -->
       <section id="hero">
-        <div class="shell hero">
-          <div>
-            <div class="hero-kicker">Mechanical engineering · CAD · GD&amp;T</div>
-            <h1>
-              Hi, I'm <span class="highlight">Ziming Wang</span>.
-            </h1>
-            <p class="hero-subtitle">
-              B.S. Mechanical Engineering, University of California, Riverside · Class of 2025
-            </p>
-            <p class="hero-tagline">
-              I focus on <strong>CAD-driven mechanical design</strong>, documentation, and
-              <strong>manufacturable solutions</strong>. Recent work includes a Pelton turbine energy harvester,
-              FSAE aero package refinement, and a parametric V6 engine model.
-            </p>
-            <div class="hero-actions">
-              <a href="#projects" class="btn btn-primary">
-                View projects
-                <span class="btn-icon">↓</span>
-              </a>
-              <a href="#contact" class="btn btn-ghost">
-                Contact 
-                <span class="btn-icon">→</span>
-              </a>
-            </div>
-            <div class="hero-meta">
-              <div class="hero-meta-pill">SolidWorks · GD&amp;T · FEA/CFD exposure · MATLAB</div>
-              <div class="hero-meta-pill">Seeking entry-level mechanical design / product development roles</div>
-            </div>
-          </div>
-
-          <div class="hero-right">
-            <div class="hero-card">
-              <div class="hero-card-header">
-                <span class="label">Summary</span>
-                <div class="hero-card-title">Core engineering experience</div>
-              </div>
-              <div class="hero-card-grid">
-                <div class="hero-pill">
-                  <span class="key">Senior Project</span>
-                  <span class="val">Pelton turbine &amp; generator assembly</span>
-                </div>
-                <div class="hero-pill">
-                  <span class="key">Student Design</span>
-                  <span class="val">FSAE aero package concepting</span>
-                </div>
-                <div class="hero-pill">
-                  <span class="key">CAD</span>
-                  <span class="val">V6 engine model · complex assemblies</span>
-                </div>
-              </div>
-              <div class="hero-badge">
-                <span class="hero-badge-dot"></span>
-                <span>Open to opportunities in Southern California and beyond</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECTS OVERVIEW -->
-      <section id="projects">
         <div class="shell">
-          <div class="section-header">
-            <div class="section-kicker">Projects</div>
-            <h2 class="section-title">Selected engineering work</h2>
-            <p class="section-subtitle">
-              An overview of three projects that best represent my mechanical design, CAD, and documentation skills.
-              Each project has a dedicated Objective / Process / Results breakdown below.
-            </p>
-          </div>
-
-          <div class="projects-grid">
-            <!-- Pelton -->
-            <article class="project-card">
-              <div class="project-pill-row">
-                <span class="pill pill-accent">Senior Design · Pelton Turbine Energy Harvester</span>
-                <span class="pill">Team of 4</span>
-              </div>
-              <h3 class="project-title">Marine Energy Harvester · Pelton Turbine &amp; Generator Housing</h3>
-              <div class="project-role">Lead CAD / Mechanical Design · SolidWorks</div>
-              <p class="project-desc">
-                Designed a buoy-mounted Pelton turbine and generator assembly intended to convert high-head water flow
-                into electrical power. Owned the CAD for the turbine wheel, final shaft assembly, generator housing,
-                and pulley system.
+          <div class="hero">
+            <div>
+              <h1>
+                Hi! I'm <span class="highlight">Ziming Wang</span>.
+              </h1>
+              <p class="hero-subtitle">
+                B.S. Mechanical Engineering, University of California, Riverside · Class of 2025
               </p>
-              <p class="project-meta">
-                Delivered detailed part and assembly drawings with <strong>functional GD&amp;T</strong> on shaft
-                journals, bearing seats, and mounting interfaces.
-              </p>
-              <div class="project-tags">
-                <span class="tag">SolidWorks (parts &amp; assemblies)</span>
-                <span class="tag">GD&amp;T</span>
-                <span class="tag">Energy systems</span>
-                <span class="tag">Shaft &amp; pulley design</span>
-              </div>
-              <div class="project-footer">
-                <div class="muted">Emphasis on manufacturability and alignment.</div>
-                <div class="project-footer-actions">
-                  <a href="#project-pelton" class="btn btn-ghost btn-small">
-                    View project details
-                    <span class="btn-icon">→</span>
-                  </a>
-                </div>
-              </div>
-            </article>
 
-            <!-- FSAE -->
-            <article class="project-card">
-              <div class="project-pill-row">
-                <span class="pill pill-accent">FSAE Aero Package</span>
-                <span class="pill">Student Competition</span>
-              </div>
-              <h3 class="project-title">FSAE Front &amp; Rear Wing Concept · Aero Package Refinement</h3>
-              <div class="project-role">Aero / CAD Contributor</div>
-              <p class="project-desc">
-                Contributed to the refinement of an FSAE aero package, focusing on front wing geometry, endplates,
-                and mounting structure while working within suspension and steering constraints.
-              </p>
-              <p class="project-meta">
-                Developed CAD concepts that considered both aerodynamic intent and realistic fabrication / mounting
-                strategies.
-              </p>
-              <div class="project-tags">
-                <span class="tag">Vehicle dynamics context</span>
-                <span class="tag">Packaging constraints</span>
-                <span class="tag">SolidWorks surfacing</span>
-                <span class="tag">Composite-style geometry</span>
-              </div>
-              <div class="project-footer">
-                <div class="muted">Balanced aero performance and manufacturability.</div>
-                <div class="project-footer-actions">
-                  <a href="#project-fsae" class="btn btn-ghost btn-small">
-                    View project details
-                    <span class="btn-icon">→</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-
-            <!-- V6 -->
-            <article class="project-card">
-              <div class="project-pill-row">
-                <span class="pill pill-accent">CAD Model · V6 Engine</span>
-                <span class="pill">Individual Project</span>
-              </div>
-              <h3 class="project-title">Parametric V6 Engine CAD Assembly</h3>
-              <div class="project-role">Solo project · SolidWorks</div>
-              <p class="project-desc">
-                Built a parametric V6 engine assembly including block, heads, pistons, connecting rods, crankshaft,
-                and valvetrain-level detail. Focused on clean sketches, robust relations, and a clear feature tree.
-              </p>
-              <p class="project-meta">
-                Demonstrates ability to manage complex assemblies, apply mates systematically, and encode design intent.
-              </p>
-              <div class="project-tags">
-                <span class="tag">SolidWorks assemblies</span>
-                <span class="tag">Complex geometry</span>
-                <span class="tag">Design intent</span>
-                <span class="tag">Parametric modeling</span>
-              </div>
-              <div class="project-footer">
-                <div class="muted">Shows modeling discipline and attention to detail.</div>
-                <div class="project-footer-actions">
-                  <a href="#project-v6" class="btn btn-ghost btn-small">
-                    View project details
-                    <span class="btn-icon">→</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- DETAILS INTRO -->
-      <section id="project-details">
-        <div class="shell">
-          <div class="section-header details-intro">
-            <div class="section-kicker">Details</div>
-            <h2 class="section-title">Project breakdown</h2>
-            <p class="section-subtitle">
-              Each project is summarized using three lenses that are familiar to engineering reviewers:
-              <strong>Objective</strong>, <strong>Process</strong>, and <strong>Results</strong>.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECT DETAIL: PELTON -->
-      <section id="project-pelton" class="project-detail">
-        <div class="shell">
-          <div class="project-detail-inner">
-            <div class="project-detail-header">
-              <div class="project-detail-title">
-                Marine Energy Harvester · Pelton Turbine &amp; Generator Assembly (Senior Design)
-              </div>
-              <div class="project-detail-subtitle">
-                Role: Lead CAD / Mechanical Design · Team of 4 · SolidWorks
-              </div>
-            </div>
-
-            <div class="detail-images">
-              <div class="detail-image-slot">
-                <img src="turbine.png" alt="Assembly render">
-              </div>
-              <div class="detail-image-slot">
-                <img src="housing.png" alt="Turbine CFD Simulation render">
-              </div>
-              <div class="detail-image-slot">
-                <img src="assembly.png" alt="Assembly view / drawing snapshot">
-              </div>
-            </div>
-
-            <div class="detail-columns">
-              <div class="detail-column">
-                <h4>Objective</h4>
-                <ul>
-                  <li>Design a buoy-mounted Pelton turbine and generator assembly that converts high-head water flow into electrical power.</li>
-                  <li>Create a layout that uses realistic components (bearings, pulleys, fasteners) and can be manufactured with common processes.</li>
-                  <li>Produce drawings and GD&amp;T that communicate fit and alignment requirements clearly to a shop floor.</li>
-                </ul>
-              </div>
-              <div class="detail-column">
-                <h4>Process</h4>
-                <ul>
-                  <li>Owned the CAD for the Pelton turbine wheel, final shaft assembly, generator housing, and pulley arrangement in SolidWorks.</li>
-                  <li>Defined datum structures and applied functional GD&amp;T to shaft journals, bearing seats, mounting faces, and housing interfaces.</li>
-                  <li>Considered assembly order and maintenability when locating bearings, seals, and fasteners, using standard sizes wherever possible.</li>
-                  <li>Coordinated with teammates performing hand calculations and checks so that the CAD geometry reflected design assumptions (head, flow, speed).</li>
-                </ul>
-              </div>
-              <div class="detail-column">
-                <h4>Results</h4>
-                <ul>
-                  <li>Delivered a complete CAD assembly suitable for manufacturing review, including part drawings, assembly views, and BOM.</li>
-                  <li>Documented alignment and fit requirements using GD&amp;T so that critical interfaces (e.g., shaft to bearing, housing to frame) are inspectable.</li>
-                  <li>Showcased a clear design story from concept to manufacturable model, highlighting my ability to own mechanical design and documentation.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECT DETAIL: FSAE -->
-      <section id="project-fsae" class="project-detail">
-        <div class="shell">
-          <div class="project-detail-inner">
-            <div class="project-detail-header">
-              <div class="project-detail-title">
-                FSAE Front &amp; Rear Wing Concept · Aero Package Refinement
-              </div>
-              <div class="project-detail-subtitle">
-                Role: Aero / CAD Contributor · Student Competition
-              </div>
-            </div>
-
-            <div class="detail-images">
-              <div class="detail-image-slot">
-                <img src="V6.png" alt="V6 Engine Assemblt ISO view">
-              </div>
-              <div class="detail-image-slot">
-                <img src="3in1.png" alt="Air Turbo, Engine Block, Piston Assembly">
-              </div>
-              <div class="detail-image-slot">
-                <img src="assembly.png" alt="Assembly view / drawing snapshot">
-              </div>
-            </div>
-
-            <div class="detail-columns">
-              <div class="detail-column">
-                <h4>Objective</h4>
-                <ul>
-                  <li>Support development of an aero package that improves downforce for an FSAE car within realistic manufacturing and packaging constraints.</li>
-                  <li>Ensure front and rear wing concepts can coexist with suspension travel, steering angle, and tire envelope.</li>
-                  <li>Provide clear CAD models that help the team visualize trade-offs between performance and build complexity.</li>
-                </ul>
-              </div>
-              <div class="detail-column">
-                <h4>Process</h4>
-                <ul>
-                  <li>Modeled front wing profiles, endplates, and mounting structures in SolidWorks, checking clearance to tires and chassis in steering and bump.</li>
-                  <li>Iterated on element placement, aspect ratio, and endplate features based on team feedback and reference aero data.</li>
-                  <li>Explored mounting and adjustment concepts (brackets, slots, spacers) with an eye toward simple fabrication and assembly.</li>
-                  <li>Communicated design intent through organized CAD, annotations, and basic plots / sketches of expected load directions.</li>
-                </ul>
-              </div>
-              <div class="detail-column">
-                <h4>Results</h4>
-                <ul>
-                  <li>Produced CAD concepts that clarified how wings would be positioned, supported, and adjusted on the car.</li>
-                  <li>Helped the team evaluate whether proposed aero gains were achievable with student-level manufacturing resources.</li>
-                  <li>Demonstrated my ability to think about both aerodynamic objectives and the realities of brackets, fasteners, and assembly.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECT DETAIL: V6 -->
-      <section id="project-v6" class="project-detail">
-        <div class="shell">
-          <div class="project-detail-inner">
-            <div class="project-detail-header">
-              <div class="project-detail-title">
-                Parametric V6 Engine CAD Assembly
-              </div>
-              <div class="project-detail-subtitle">
-                Role: Individual Project · CAD Sprint · SolidWorks
-              </div>
-            </div>
-
-            <div class="detail-images">
-              <div class="detail-image-slot">
-                <img src="V6 rotation.gif" alt="V6 rotation preview 1">
-              </div>
-              <div class="detail-image-slot">
-                <img src="3in1.png" alt="Air Turbo, Engine Block, Piston Assembly">
-              </div>
-              <div class="detail-image-slot">
-              <div class="detail-image-slot">
-                <img src="V6 Turning.gif" alt="V6 rotation preview 2">
-              </div>
-            </div>
-
-            </div>
-
-            <div class="detail-columns">
-              <div class="detail-column">
-                <h4>Objective</h4>
-                <ul>
-                  <li>Practice building and organizing a complex mechanical assembly entirely in CAD, with emphasis on design intent and parametric control.</li>
-                  <li>Capture realistic relationships between major engine components (block, heads, pistons, rods, crankshaft, valvetrain).</li>
-                  <li>Demonstrate speed and discipline in SolidWorks modeling and assembly management.</li>
-                </ul>
-              </div>
-              <div class="detail-column">
-                <h4>Process</h4>
-                <ul>
-                  <li>Created individual parts for the engine block, heads, pistons, connecting rods, crankshaft, and valvetrain features using fully defined sketches.</li>
-                  <li>Used consistent reference planes and parametric dimensions so that bore, stroke, and bank angle can be adjusted without breaking the model.</li>
-                  <li>Assembled components with a systematic mating strategy to maintain clear kinematic relationships between crank, rods, and pistons.</li>
-                  <li>Organized the feature tree with meaningful names and folders, making the model easier to review and modify.</li>
-                </ul>
-              </div>
-              <div class="detail-column">
-                <h4>Results</h4>
-                <ul>
-                  <li>Completed a functional V6 assembly that can be reconfigured without major rebuilds, illustrating strong design intent.</li>
-                  <li>Showed capability to manage part–to–part relationships in a dense assembly and keep geometry robust as parameters change.</li>
-                  <li>Provides a strong example of my CAD habits for complex mechanical systems, beyond simple brackets or single parts.</li>
-                </ul>
+              <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">
+                  View projects
+                  <span class="btn-icon">↓</span>
+                </a>
+                <a href="#contact" class="btn btn-ghost">
+                  Contact 
+                  <span class="btn-icon">→</span>
+                </a>
               </div>
             </div>
           </div>
@@ -1097,6 +926,7 @@
       </section>
 
       <!-- ABOUT / SKILLS -->
+      <a href="#about" class="section-arrow1">↓</a>
       <section id="about">
         <div class="shell">
           <div class="section-header">
@@ -1173,43 +1003,408 @@
         </div>
       </section>
 
-      <!-- CONTACT -->
-      <section id="contact">
-        <div class="shell contact">
+      <!-- PROJECTS OVERVIEW -->
+      <a href="#projects" class="section-arrow2">↓</a>
+      <section id="projects">
+        <div class="shell">
           <div class="section-header">
-            <div class="section-kicker">Next steps</div>
-            <h2 class="section-title">Contact</h2>
-            <p>
-              I’m currently seeking full-time entry-level mechanical engineering or design roles. If you’d like to
-              discuss an opportunity or see more detail on any of these projects, feel free to get in touch.
+            <div class="section-kicker">Projects</div>
+            <h2 class="section-title">Selected engineering work</h2>
+            <p class="section-subtitle">
+              An overview of three projects that best represent my mechanical design, CAD, and documentation skills.
+              Each project has a dedicated Objective / Process / Results breakdown below.
             </p>
           </div>
 
-          <div class="contact-row">
-            <a href="mailto:w761916106@gmail.com" class="btn btn-primary">
-              Email me
-              <span class="btn-icon">✉</span>
-            </a>
-          </div>
+          <div class="projects-grid">
+            <!-- Pelton -->
+            <article class="project-card">
+              <div class="project-card-image">
+                <img src="assets/pelton_thumbnail.png" alt="Pelton turbine and generator assembly thumbnail">
+              </div>
+              <div class="project-pill-row">
+                <span class="pill pill-accent">Senior Design · Pelton Turbine Energy Harvester</span>
+                <span class="pill">Team of 4</span>
+              </div>
+              <h3 class="project-title">Marine Energy Harvester · Pelton Turbine &amp; Generator Housing</h3>
+              <div class="project-role">Lead CAD / Mechanical Design · SolidWorks</div>
+              <p class="project-desc">
+                Designed a buoy-mounted Pelton turbine and generator assembly intended to convert high-head water flow
+                into electrical power. Owned the CAD for the turbine wheel, final shaft assembly, generator housing,
+                and pulley system.
+              </p>
+              <p class="project-meta">
+                Delivered detailed part and assembly drawings with <strong>functional GD&amp;T</strong> on shaft
+                journals, bearing seats, and mounting interfaces.
+              </p>
+              <div class="project-tags">
+                <span class="tag">SolidWorks (parts &amp; assemblies)</span>
+                <span class="tag">GD&amp;T</span>
+                <span class="tag">Energy systems</span>
+                <span class="tag">Shaft &amp; pulley design</span>
+              </div>
+              <div class="project-footer">
+                <div class="muted">Emphasis on manufacturability and alignment.</div>
+                <div class="project-footer-actions">
+                  <a href="#project-pelton" class="btn btn-ghost btn-small">
+                    View project details
+                    <span class="btn-icon">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
 
-          <div class="contact-row">
-            <div class="contact-pill">
-              <span class="mono">Email:</span>
-              <span>w761916106@gmail.com</span>
+            <!-- FSAE -->
+            <article class="project-card">
+              <div class="project-card-image">
+                <img src="assets/FSAE_thumbnail.png" alt="FSAE aero package thumbnail">
+              </div>
+              <div class="project-pill-row">
+                <span class="pill pill-accent">FSAE Aero Package</span>
+                <span class="pill">Student Competition</span>
+              </div>
+              <h3 class="project-title">FSAE Front &amp; Rear Wing Concept · Aero Package Refinement</h3>
+              <div class="project-role">Aero / CAD Contributor</div>
+              <p class="project-desc">
+                Contributed to the refinement of an FSAE aero package, focusing on front wing geometry, endplates,
+                and mounting structure while working within suspension and steering constraints.
+              </p>
+              <p class="project-meta">
+                Developed CAD concepts that considered both aerodynamic intent and realistic fabrication / mounting
+                strategies.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Vehicle dynamics context</span>
+                <span class="tag">Packaging constraints</span>
+                <span class="tag">SolidWorks surfacing</span>
+                <span class="tag">Composite-style geometry</span>
+              </div>
+              <div class="project-footer">
+                <div class="muted">Balanced aero performance and manufacturability.</div>
+                <div class="project-footer-actions">
+                  <a href="#project-fsae" class="btn btn-ghost btn-small">
+                    View project details
+                    <span class="btn-icon">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- V6 -->
+            <article class="project-card">
+              <div class="project-card-image">
+                <img src="assets/V6_thumbnail.png" alt="V6 engine assembly thumbnail">
+              </div>
+              <div class="project-pill-row">
+                <span class="pill pill-accent">CAD Model · V6 Engine</span>
+                <span class="pill">Individual Project</span>
+              </div>
+              <h3 class="project-title">Parametric V6 Engine CAD Assembly</h3>
+              <div class="project-role">Solo project · SolidWorks</div>
+              <p class="project-desc">
+                Built a parametric V6 engine assembly including block, heads, pistons, connecting rods, crankshaft,
+                and valvetrain-level detail. Focused on clean sketches, robust relations, and a clear feature tree.
+              </p>
+              <p class="project-meta">
+                Demonstrates ability to manage complex assemblies, apply mates systematically, and encode design intent.
+              </p>
+              <div class="project-tags">
+                <span class="tag">SolidWorks assemblies</span>
+                <span class="tag">Complex geometry</span>
+                <span class="tag">Design intent</span>
+                <span class="tag">Parametric modeling</span>
+              </div>
+              <div class="project-footer">
+                <div class="muted">Shows modeling discipline and attention to detail.</div>
+                <div class="project-footer-actions">
+                  <a href="#project-v6" class="btn btn-ghost btn-small">
+                    View project details
+                    <span class="btn-icon">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETAILS INTRO -->
+    
+      <section id="project-details">
+        <div class="shell">
+          <div class="section-header details-intro">
+            <div class="section-kicker">Details</div>
+            <h2 class="section-title">Project breakdown</h2>
+            <p class="section-subtitle">
+              Each project is summarized using three lenses that are familiar to engineering reviewers:
+              <strong>Objective</strong>, <strong>Process</strong>, and <strong>Results</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECT DETAIL: PELTON -->
+      <section id="project-pelton" class="project-detail">
+        <div class="shell">
+          <div class="project-detail-inner">
+            <div class="project-detail-header">
+              <div class="project-detail-title">
+                Marine Energy Harvester · Pelton Turbine &amp; Generator Assembly (Senior Design)
+              </div>
             </div>
-            <div class="contact-pill">
-              <span class="mono">Location:</span>
-              <span>Coto De Caza, CA 92679</span>
+
+            <div class="detail-images">
+              <div class="detail-image-slot">
+                <img src="turbine.png" alt="Assembly render">
+              </div>
+              <div class="detail-image-slot">
+                <img src="housing.png" alt="Turbine housing and support structure">
+              </div>
+              <div class="detail-image-slot">
+                <img src="assembly.png" alt="Assembly view / drawing snapshot">
+              </div>
+            </div>
+
+            <div class="detail-columns">
+              <div class="detail-column">
+                <h4>Goals</h4>
+                <ul>
+                  <li>Design a buoy-mounted Pelton turbine and generator assembly that converts high-head water flow into electrical power.</li>
+                  <li>Create a layout that uses realistic components (bearings, pulleys, fasteners) and can be manufactured with common processes.</li>
+                  <li>Produce drawings and GD&amp;T that communicate fit and alignment requirements clearly to a shop floor.</li>
+                </ul>
+              </div>
+              <div class="detail-column">
+                <h4>Process</h4>
+                <ul>
+                  <li>Owned the CAD for the Pelton turbine wheel, final shaft assembly, generator housing, and pulley arrangement in SolidWorks.</li>
+                  <li>Defined datum structures and applied functional GD&amp;T to shaft journals, bearing seats, mounting faces, and housing interfaces.</li>
+                  <li>Considered assembly order and maintainability when locating bearings, seals, and fasteners, using standard sizes wherever possible.</li>
+                  <li>Coordinated with teammates performing hand calculations and checks so that the CAD geometry reflected design assumptions (head, flow, speed).</li>
+                </ul>
+              </div>
+              <div class="detail-column">
+                <h4>Results</h4>
+                <ul>
+                  <li>Delivered a complete CAD assembly suitable for manufacturing review, including part drawings, assembly views, and BOM.</li>
+                  <li>Documented alignment and fit requirements using GD&amp;T so that critical interfaces (e.g., shaft to bearing, housing to frame) are inspectable.</li>
+                  <li>Showcased a clear design story from concept to manufacturable model, highlighting my ability to own mechanical design and documentation.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- PROJECT DETAIL: FSAE -->
+      <section id="project-fsae" class="project-detail">
+        <div class="shell">
+          <div class="project-detail-inner">
+            <div class="project-detail-header">
+              <div class="project-detail-title">
+                FSAE Front &amp; Rear Wing Concept · Aero Package Refinement
+              </div>
+            </div>
+
+            <div class="detail-images">
+              <div class="detail-image-slot">
+                <img src="CFD_FW.png" alt="Front wing CFD result">
+              </div>
+              <div class="detail-image-slot">
+                <img src="Flowplot.png" alt="Flow and pressure visualization">
+              </div>
+              <div class="detail-image-slot">
+                <img src="Lap.png" alt="OptimumLap performance comparison">
+              </div>
+            </div>
+
+            <div class="detail-columns">
+              <div class="detail-column">
+                <h4>Goals</h4>
+                <ul>
+                  <li>Evaluate aerodynamic performance of a multi-element wing in SolidWorks CFD and examine its on-track performance in OptimumLap.</li>
+                  <li>Improve the baseline performance through redesign and validate the gains.</li>
+                  <li>Develop an intuition for key aerodynamic behaviors so designs remain practical for FSAE implementation.</li>
+                </ul>
+              </div>
+              <div class="detail-column">
+                <h4>Process</h4>
+                <ul>
+                  <li>Benchmarked the existing wing by setting up a CFD environment and running mesh-convergence studies to find a good fidelity/runtime balance.</li>
+                  <li>Established a performance baseline by running the stock aerodynamics through OptimumLap to determine a lap-time target.</li>
+                  <li>Selected a low-Reynolds-number airfoil (S1223) suitable for FSAE operating conditions and integrated it into the front-wing assembly.</li>
+                  <li>Built an initial three-element geometry with conservative AoA, stagger, and spacing to allow systematic iterative refinement.</li>
+                  <li>Conducted iterative CFD analysis, adjusting element AoA, gap, and overlap to balance downforce, drag, and stall behavior while managing ride-height sensitivity.</li>
+                  <li>Evaluated flow quality using velocity, pressure, and shear-stress plots to identify separation, wake interaction, and slot-jet performance.</li>
+                  <li>Simulated the final design in OptimumLap to quantify on-track benefit relative to the baseline vehicle.</li>
+                </ul>
+              </div>
+              <div class="detail-column">
+                <h4>Results</h4>
+                <ul>
+                  <li>Achieved a significant downforce increase (CL improved from –2.6 to –3.18) while managing drag growth (CD from 1.09 to 1.39).</li>
+                  <li>Identified and mitigated laminar separation bubbles and wake-induced losses through geometry and AoA refinement.</li>
+                  <li>Generated a 1.00-second reduction in lap time in OptimumLap versus the baseline configuration.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECT DETAIL: V6 -->
+      <section id="project-v6" class="project-detail">
+        <div class="shell">
+          <div class="project-detail-inner">
+            <div class="project-detail-header">
+              <div class="project-detail-title">
+                Parametric V6 Engine CAD Assembly
+              </div>
+            </div>
+
+            <div class="detail-images">
+              <div class="detail-image-slot">
+                <img src="V6 rotation.gif" alt="V6 rotation preview 1">
+              </div>
+              <div class="detail-image-slot">
+                <img src="3in1.png" alt="Component views">
+              </div>
+              <div class="detail-image-slot">
+                <img src="V6 Turning.gif" alt="V6 rotation preview 2">
+              </div>
+            </div>
+
+            <div class="detail-columns">
+              <div class="detail-column">
+                <h4>Goals</h4>
+                <ul>
+                  <li>Practice building and organizing a complex mechanical assembly entirely in CAD, with emphasis on design intent and parametric control.</li>
+                  <li>Capture realistic relationships between major engine components (block, heads, pistons, rods, crankshaft, valvetrain).</li>
+                  <li>Demonstrate speed and discipline in SolidWorks modeling and assembly management.</li>
+                </ul>
+              </div>
+              <div class="detail-column">
+                <h4>Process</h4>
+                <ul>
+                  <li>Created individual parts for the engine block, heads, pistons, connecting rods, crankshaft, and valvetrain using fully defined sketches.</li>
+                  <li>Used consistent reference planes and parametric dimensions so that bore, stroke, and bank angle can be adjusted without breaking the model.</li>
+                  <li>Assembled components with a systematic mating strategy to maintain clear kinematic relationships between crank, rods, and pistons.</li>
+                  <li>Organized the feature tree with meaningful names and folders, making the model easier to review and modify.</li>
+                </ul>
+              </div>
+              <div class="detail-column">
+                <h4>Results</h4>
+                <ul>
+                  <li>Completed a functional V6 assembly that can be reconfigured without major rebuilds, illustrating strong design intent.</li>
+                  <li>Showed capability to manage part–to–part relationships in a dense assembly and keep geometry robust as parameters change.</li>
+                  <li>Provides a strong example of my CAD habits for complex mechanical systems, beyond simple brackets or single parts.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="shell">
+          <div class="section-header">
+            <h2 class="section-title">Next steps</h2>
+            <p class="section-subtitle">
+              I’m currently seeking full-time entry-level mechanical engineering or design roles. 
+              If you’d like to discuss an opportunity or see more detail on any of these projects, feel free to reach out.
+            </p>
+          </div>
+
+          <div class="contact-layout">
+            <!-- Left: Contact info card -->
+            <div class="contact-card">
+              <h3 class="contact-card-title">Contact information</h3>
+
+              <!-- Email row -->
+              <div class="contact-info-row">
+                <div class="contact-info-icon">
+                  <!-- Email icon -->
+                  <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M4 4h16v16H4z"/>
+                    <path d="M4 4l8 7 8-7"/>
+                  </svg>
+                </div>
+                <div class="contact-info-text">
+                  <span class="contact-info-text-title">Email</span>
+                  <a href="mailto:w761916106@gmail.com">w761916106@gmail.com</a>
+                </div>
+              </div>
+
+              <!-- Phone row -->
+              <div class="contact-info-row">
+                <div class="contact-info-icon">
+                  <!-- Phone icon -->
+                  <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12.81.37 1.59.72 2.32a2 2 0 0 1-.45 2.11L9 10a16 16 0 0 0 7 7l1.85-1.27a2 2 0 0 1 2.11-.45c.73.35 1.51.6 2.32.72A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div class="contact-info-text">
+                  <span class="contact-info-text-title">Phone</span>
+                  <span>(949) 709-9468</span>
+                </div>
+              </div>
+
+              <!-- Location row -->
+              <div class="contact-info-row">
+                <div class="contact-info-icon">
+                  <!-- Location icon -->
+                  <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M12 22s8-4.5 8-11a8 8 0 1 0-16 0c0 6.5 8 11 8 11z"/>
+                    <circle cx="12" cy="11" r="3"/>
+                  </svg>
+                </div>
+                <div class="contact-info-text">
+                  <span class="contact-info-text-title">Location</span>
+                  <span>Coto De Caza, CA 92679</span>
+                </div>
+              </div>
+
+              <p class="contact-note">
+                Email is the best way to reach me. I’m happy to walk through CAD models, drawings, or talk about how I can help your team.
+              </p>
+            </div>
+
+            <!-- Right: Message card (front-end only) -->
+            <div class="contact-card">
+              <h3 class="contact-card-title">Send a message</h3>
+              <form class="contact-form" onsubmit="window.location.href='mailto:w761916106@gmail.com'; return false;">
+                <div class="contact-field">
+                  <label for="name">Name</label>
+                  <input id="name" type="text" placeholder="Your name" />
+                </div>
+                <div class="contact-field">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" placeholder="your.email@example.com" />
+                </div>
+                <div class="contact-field">
+                  <label for="subject">Subject</label>
+                  <input id="subject" type="text" placeholder="Project inquiry, role, or topic" />
+                </div>
+                <div class="contact-field">
+                  <label for="message">Message</label>
+                  <textarea id="message" rows="4" placeholder="Tell me about the role or project you have in mind."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary contact-submit">
+                  Send message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <footer>
       <div class="shell">
         <div>© <span id="year"></span> Ziming Wang. All rights reserved.</div>
-        <div>Built with HTML &amp; CSS · Structured for quick review by hiring managers.</div>
+        <div>Built with HTML &amp; CSS.</div> 
       </div>
     </footer>
   </div>
